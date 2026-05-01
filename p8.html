@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+
+<style>
+/* (Acts like external CSS but written here for single file demo) */
+
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    color: white;
+}
+
+/* Heading */
+h1 {
+    padding: 20px;
+}
+
+/* Gallery Layout */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Style */
+.card {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Hover Effects */
+.card:hover img {
+    transform: scale(1.2);
+    filter: brightness(70%);
+}
+
+/* Overlay Effect */
+.card::after {
+    content: "View Image";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: white;
+    font-size: 18px;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>My Image Gallery</h1>
+
+<div class="gallery">
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200?1">
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200?2">
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200?3">
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200?4">
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200?5">
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/300/200?6">
+    </div>
+
+</div>
+
+</body>
+</html>
